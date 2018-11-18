@@ -1,0 +1,30 @@
+{
+  "name": "@widget-kit/rpc",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Alexander Shepelin <Brightcor@gmail.com> (https://github.com/44px)",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "fmt": "prettier --write src/**/*.{ts,json}",
+    "prelint": "npm run fmt",
+    "lint": "tslint --force --project tsconfig.json -t codeFrame src/**/*.ts",
+    "test": "jest",
+    "prebuild": "rimraf dist",
+    "build": "tsc -d && rollup -c rollup.config.js",
+    "postbuild": "rimraf dist/lib"
+  },
+  "devDependencies": {
+    "rollup": "^0.67.3",
+    "rollup-plugin-sourcemaps": "^0.4.2"
+  },
+  "keywords": []
+}

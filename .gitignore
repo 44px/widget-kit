@@ -1,0 +1,8 @@
+.DS_Store
+.vscode
+.idea
+*.log
+.rpt2_cache
+node_modules
+coverage
+dist

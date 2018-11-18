@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "es2015",
+    "esModuleInterop": true,
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "strict": true
+  },
+  "exclude": [
+    "**/*.test.ts"
+  ]
+}
