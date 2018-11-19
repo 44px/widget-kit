@@ -1,6 +1,6 @@
 module.exports = {
   transform: {
-    '.(ts|tsx)': '<rootDir>/node_modules/ts-jest/preprocessor.js',
+    '.(ts|tsx)': 'ts-jest',
   },
   testEnvironment: 'jsdom',
   testURL: 'https://test.com',
