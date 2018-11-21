@@ -1,5 +1,4 @@
 export {
-  Args,
   Request,
   Response,
   ResponseProducerFn,

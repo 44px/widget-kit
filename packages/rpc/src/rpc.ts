@@ -1,5 +1,3 @@
-export type Args = any[];
-
 interface Sequential {
   sequenceId: number;
 }
@@ -10,10 +8,10 @@ const RESPONSE_TYPE = '@widget-kit/rpc/response';
 export interface Request extends Sequential {
   readonly type: '@widget-kit/rpc/request';
   readonly method: string;
-  readonly args: Args;
+  readonly args: any[];
 }
 
-export function createRequest(method: string, args: Args = []): Request {
+export function createRequest(method: string, ...args: any): Request {
   return {
     method,
     args,
