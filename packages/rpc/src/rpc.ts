@@ -89,7 +89,7 @@ export function createConnection(
     delete requestHandlers[response.sequenceId];
   }
 
-  currentWindow.addEventListener('message', event => {
+  currentWindow.addEventListener('message', (event) => {
     if (!isEventTrusted(event, targetWindow, targetOrigin)) {
       return;
     }
