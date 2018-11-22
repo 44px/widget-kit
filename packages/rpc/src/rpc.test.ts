@@ -32,7 +32,7 @@ describe('RPC', () => {
     });
 
     const widgetConnection = createConnection(widgetWindow, hostWindow);
-    const sumRequest = (a, b) => createRequest(METHOD, a, b);
+    const sumRequest = (a: number, b: number) => createRequest(METHOD, a, b);
     widgetConnection.send(sumRequest(1, 2), (response) => {
       expect(response.payload).toBe(3);
     });
