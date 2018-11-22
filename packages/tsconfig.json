@@ -1,6 +1,7 @@
 {
   "files": [],
   "references": [
+    { "path": "container" },
     { "path": "rpc" }
   ]
 }

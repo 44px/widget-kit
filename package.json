@@ -6,7 +6,8 @@
     "bootstrap": "lerna bootstrap",
     "fmt": "lerna run fmt",
     "lint": "lerna run lint",
-    "test": "jest"
+    "test": "jest",
+    "build": "lerna run build"
   },
   "devDependencies": {
     "@types/jest": "^23.3.9",
