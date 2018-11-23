@@ -1,0 +1,20 @@
+{
+  "name": "widget-kit-docs",
+  "version": "1.0.0",
+  "private": true,
+  "author": "Alexander Shepelin <Brightcor@gmail.com> (https://github.com/44px)",
+  "license": "MIT",
+  "scripts": {
+    "start": "",
+    "build": "",
+    "predeploy": "npm run build",
+    "deploy": ""
+  },
+  "dependencies": {
+    "@widget-kit/container": "1.0.0",
+    "@widget-kit/rpc": "1.0.0"
+  },
+  "devDependencies": {
+
+  }
+}

@@ -17,5 +17,5 @@ module.exports = {
     },
   },
   collectCoverage: true,
-  collectCoverageFrom: ['packages/*/src/**.{js,ts}', '!**/index.{js,ts}'],
+  collectCoverageFrom: ['packages/*/src/**.{js,ts}', '!**/test-utils.{js,ts}', '!**/index.{js,ts}'],
 };
