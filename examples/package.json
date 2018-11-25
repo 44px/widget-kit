@@ -1,20 +1,21 @@
 {
-  "name": "widget-kit-docs",
+  "name": "widget-kit-examples",
   "version": "1.0.0",
   "private": true,
   "author": "Alexander Shepelin <Brightcor@gmail.com> (https://github.com/44px)",
   "license": "MIT",
   "scripts": {
-    "start": "",
-    "build": "",
-    "predeploy": "npm run build",
-    "deploy": ""
+    "start:banner": "webpack-dev-server --env.example=banner",
+    "start:popup": "webpack-dev-server --env.example=popup"
   },
   "dependencies": {
     "@widget-kit/container": "1.0.0",
     "@widget-kit/rpc": "1.0.0"
   },
   "devDependencies": {
-
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.26.0",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
   }
 }
