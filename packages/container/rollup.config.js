@@ -1,12 +1,4 @@
-import sourceMaps from 'rollup-plugin-sourcemaps';
-
+import { createRollupConfig } from '../../create-rollup-config';
 const pkg = require('./package.json');
 
-export default {
-  input: 'dist/lib/index.js',
-  output: [
-    { file: pkg.main, name: pkg.name, format: 'cjs', sourcemap: true },
-    { file: pkg.module, format: 'es', sourcemap: true },
-  ],
-  plugins: [sourceMaps()],
-};
+export default createRollupConfig(pkg);

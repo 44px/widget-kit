@@ -27,9 +27,7 @@
   },
   "devDependencies": {
     "@types/jsdom": "^12.2.0",
-    "jsdom": "^13.0.0",
-    "rollup": "^0.67.3",
-    "rollup-plugin-sourcemaps": "^0.4.2"
+    "jsdom": "^13.0.0"
   },
   "keywords": []
 }
