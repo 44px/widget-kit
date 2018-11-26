@@ -2,25 +2,32 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = (env) => {
+  const template = './src/template.html';
+
   return {
-    mode: 'development',
+    mode: env.mode,
     entry: {
       loader: `./src/${env.example}/loader.ts`,
-      widget: `./src/${env.example}/widget.ts`,
+      widget: `./src/${env.example}/widget.tsx`,
     },
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: '[name].js',
     },
+    resolve: {
+      extensions: ['.ts', '.tsx', '.js'],
+    },
     module: {
-      rules: [],
+      rules: [{ test: /\.tsx?$/, loader: 'ts-loader' }],
     },
     plugins: [
+      // Host page:
+      new HtmlWebpackPlugin({ chunks: ['loader'], template }),
+      // Widget page:
       new HtmlWebpackPlugin({
-        chunks: ['loader'],
-        meta: {
-          viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
-        },
+        filename: 'widget.html',
+        chunks: ['widget'],
+        template,
       }),
     ],
   };
