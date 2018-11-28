@@ -16,6 +16,7 @@ export function createContainer(window: Window, config: Config): Container {
   const iframe = document.createElement('iframe');
   iframe.src = config.url;
   iframe.frameBorder = '0';
+  iframe.scrolling = 'no';
   parentElement.appendChild(iframe);
 
   const widgetWindow = iframe.contentWindow as Window;
