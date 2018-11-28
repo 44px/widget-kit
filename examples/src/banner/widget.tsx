@@ -2,7 +2,7 @@ import { Component, h, render } from 'preact';
 import { initWidget, setSize, Widget } from '@widget-kit/container';
 
 interface Props {
-  widget: Widget;
+  widget?: Widget;
 }
 
 class App extends Component<Props> {
@@ -20,7 +20,7 @@ class App extends Component<Props> {
   }
 
   onSizeUpdate = () => {
-    if (this.container) {
+    if (this.container && this.props.widget) {
       const rect = this.container.getBoundingClientRect();
       this.props.widget.send(setSize(`${rect.width}px`, `${rect.height}px`));
     }
@@ -83,5 +83,5 @@ const styles = {
 };
 
 // Start widget
-const widget = initWidget(window);
+const widget = window.parent !== window ? initWidget(window) : undefined;
 render(<App widget={widget} />, document.body);
