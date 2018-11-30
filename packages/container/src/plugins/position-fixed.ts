@@ -24,6 +24,7 @@ export function initPositionFixedPlugin(container: Container, config: Config): v
     }
   }
 
+  iframe.style.position = 'fixed';
   setPosition(config.initialTop, config.initialLeft);
 
   handle(METHODS.getPosition, (produceResponse) => {

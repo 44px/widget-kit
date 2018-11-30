@@ -8,6 +8,7 @@ describe('PositionFixed plugin', () => {
       initialTop: '10px',
       initialLeft: '20px',
     });
+    expect(container.iframe.style.position).toBe('fixed');
     expect(container.iframe.style.top).toBe('10px');
     expect(container.iframe.style.left).toBe('20px');
   });
