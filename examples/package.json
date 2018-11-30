@@ -5,7 +5,7 @@
   "author": "Alexander Shepelin <Brightcor@gmail.com> (https://github.com/44px)",
   "license": "MIT",
   "scripts": {
-    "fmt": "prettier --write src/**/*.{ts,json}",
+    "fmt": "prettier --write src/**/*.{ts,tsx,json,css}",
     "prelint": "npm run fmt",
     "lint": "tslint --force --project tsconfig.json -t codeFrame src/**/*.ts",
     "start:banner": "webpack-dev-server --env.mode=development --env.example=banner",
