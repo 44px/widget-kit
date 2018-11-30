@@ -1,5 +1,6 @@
 import { Component, h, render } from 'preact';
 import { initWidget, setSize, Widget } from '@widget-kit/container';
+import './widget.css';
 
 interface Props {
   widget?: Widget;
@@ -37,50 +38,14 @@ class App extends Component<Props> {
     }
 
     return (
-      <div style={styles.container} ref={(ref) => (this.container = ref)} onClick={this.onClick}>
-        <div style={styles.title}>Size plugin example</div>
-        <div style={styles.description}>Iframe size is controlled by widget</div>
-        <div style={styles.cta}>{rows}</div>
+      <div className="banner" ref={(ref) => (this.container = ref)} onClick={this.onClick}>
+        <div className="banner__title">Size plugin example</div>
+        <div className="banner__description">Iframe size is controlled by widget</div>
+        <div className="banner__cta">{rows}</div>
       </div>
     );
   }
 }
-
-const commonStyles = {
-  margin: '0',
-  boxSizing: 'border-box',
-  fontFamily: 'sans-serif',
-};
-
-const styles = {
-  container: {
-    ...commonStyles,
-    display: 'inline-block',
-    minWidth: '200px',
-    maxWidth: '250px',
-    padding: '15px 10px',
-    borderRadius: '5px',
-    background: '#FADDD4',
-  },
-  title: {
-    ...commonStyles,
-    fontSize: '20px',
-    lineHeight: '1.2',
-    color: '#D86838',
-  },
-  description: {
-    ...commonStyles,
-    fontSize: '16px',
-    lineHeight: '1.2',
-    color: '#444',
-  },
-  cta: {
-    ...commonStyles,
-    fontSize: '14px',
-    lineHeight: '2',
-    color: '#444',
-  },
-};
 
 // Start widget
 const widget = window.parent !== window ? initWidget(window) : undefined;
