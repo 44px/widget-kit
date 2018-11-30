@@ -18,7 +18,10 @@ module.exports = (env) => {
       extensions: ['.ts', '.tsx', '.js'],
     },
     module: {
-      rules: [{ test: /\.tsx?$/, loader: 'ts-loader' }],
+      rules: [
+        { test: /\.tsx?$/, use: ['ts-loader'] },
+        { test: /\.css$/, use: ['style-loader', 'css-loader'] },
+      ],
     },
     plugins: [
       // Host page:
