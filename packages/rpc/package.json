@@ -14,9 +14,9 @@
     "access": "public"
   },
   "scripts": {
-    "fmt": "prettier --write src/**/*.{ts,json}",
-    "prelint": "npm run fmt",
-    "lint": "tslint --force --project tsconfig.json -t codeFrame src/**/*.ts",
+    "fmt": "prettier --write 'src/**/*.{ts,json}'",
+    "fmt-check": "prettier --list-different 'src/**/*.{ts,json}'",
+    "lint": "tslint --project tsconfig.json -t codeFrame src/**/*.ts",
     "test": "jest",
     "prebuild": "rimraf dist",
     "build": "tsc -d && rollup -c rollup.config.js",

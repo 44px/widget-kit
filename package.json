@@ -5,6 +5,7 @@
     "postinstall": "npm run bootstrap",
     "bootstrap": "lerna run build && lerna bootstrap",
     "fmt": "lerna run fmt",
+    "fmt-check": "lerna run fmt-check",
     "lint": "lerna run lint",
     "test": "jest",
     "build": "lerna run build"
