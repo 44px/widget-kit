@@ -9,7 +9,9 @@
     "fmt-check": "prettier --list-different 'src/**/*.{ts,tsx,json,css,html}'",
     "lint": "tslint --project tsconfig.json -t codeFrame src/**/*.ts",
     "start:banner": "webpack-dev-server --env.mode=development --env.example=banner",
-    "start:popup": "webpack-dev-server --env.mode=development --env.example=popup"
+    "start:popup": "webpack-dev-server --env.mode=development --env.example=popup",
+    "build:banner": "webpack --env.mode=production --env.example=banner",
+    "build:popup": "webpack --env.mode=production --env.example=popup"
   },
   "dependencies": {
     "@widget-kit/container": "^1.0.0",
@@ -17,8 +19,11 @@
     "preact": "^8.3.1"
   },
   "devDependencies": {
+    "clean-webpack-plugin": "^1.0.0",
+    "compression-webpack-plugin": "^2.0.0",
     "css-loader": "^1.0.1",
     "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.5",
     "style-loader": "^0.23.1",
     "ts-loader": "^5.3.0",
     "typescript": "^3.1.6",

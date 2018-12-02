@@ -1,7 +1,12 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = (env) => {
+  const isProductionBuild = env.mode === 'production';
+  const distPath = path.resolve(__dirname, 'dist', env.example);
   const template = './src/template.html';
 
   return {
@@ -11,7 +16,7 @@ module.exports = (env) => {
       widget: `./src/${env.example}/widget.tsx`,
     },
     output: {
-      path: path.resolve(__dirname, 'dist'),
+      path: distPath,
       filename: '[name].js',
     },
     resolve: {
@@ -20,10 +25,19 @@ module.exports = (env) => {
     module: {
       rules: [
         { test: /\.tsx?$/, use: ['ts-loader'] },
-        { test: /\.css$/, use: ['style-loader', 'css-loader'] },
+        {
+          test: /\.css$/,
+          use: [
+            isProductionBuild ? { loader: MiniCssExtractPlugin.loader } : 'style-loader',
+            'css-loader',
+          ],
+        },
       ],
     },
     plugins: [
+      isProductionBuild ? new CleanWebpackPlugin([distPath]) : null,
+      isProductionBuild ? new MiniCssExtractPlugin() : null,
+      isProductionBuild ? new CompressionPlugin() : null,
       // Host page:
       new HtmlWebpackPlugin({ chunks: ['loader'], template }),
       // Widget page:
@@ -32,6 +46,12 @@ module.exports = (env) => {
         chunks: ['widget'],
         template,
       }),
-    ],
+    ].filter(Boolean),
+    stats: {
+      assets: true,
+      children: false,
+      chunks: false,
+      modules: false,
+    },
   };
 };
