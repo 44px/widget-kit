@@ -1,0 +1,84 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+.label {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  padding: 12px 16px;
+  color: #cdd6d5;
+  background: #415b76;
+  border-radius: 4px;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+}
+
+.label:hover {
+  color: #d7e0df;
+  background: #506e8c;
+}
+
+.label:active {
+  color: #b3bab9;
+  background: #395066;
+}
+
+.label.is-opened {
+  display: none;
+}
+
+.chat {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: none;
+  transition: height 0.25s ease;
+}
+
+.chat.is-opened {
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 2px 4px #ccc;
+}
+
+.chat__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 12px;
+  line-height: 1;
+  color: #000;
+  cursor: pointer;
+}
+
+.chat__close:hover {
+  color: #555;
+}
+
+.chat__close:active {
+  color: #000;
+}
+
+.chat__content {
+  margin: 96px 0;
+  font-size: 64px;
+  text-align: center;
+}
