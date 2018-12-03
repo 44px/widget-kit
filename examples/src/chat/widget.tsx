@@ -46,25 +46,15 @@ class App extends Component<AppProps, AppState> {
         const width = 300;
         const height = 350;
         widget.send(setSize(`${width}px`, `${height}px`));
-        widget.send(
-          setPosition(
-            `calc(100% - ${height + cornerMargin}px)`,
-            `calc(100% - ${width + cornerMargin}px)`,
-          ),
-        );
+        widget.send(setPosition({ right: `${cornerMargin}px`, bottom: `${cornerMargin}px` }));
       } else {
-        widget.send(setSize(`100%`, `100%`));
-        widget.send(setPosition('0', `0`));
+        widget.send(setSize('100%', '100%'));
+        widget.send(setPosition({ right: '0', bottom: '0' }));
       }
     } else {
       const labelRect = this.label.getBoundingClientRect();
       widget.send(setSize(`${labelRect.width}px`, `${labelRect.height}px`));
-      widget.send(
-        setPosition(
-          `calc(100% - ${labelRect.height + cornerMargin}px)`,
-          `calc(100% - ${labelRect.width + cornerMargin}px)`,
-        ),
-      );
+      widget.send(setPosition({ right: `${cornerMargin}px`, bottom: `${cornerMargin}px` }));
     }
   };
 

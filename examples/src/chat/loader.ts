@@ -9,7 +9,4 @@ initSizePlugin(container, {
   initialHeight: '0',
 });
 
-initPositionFixedPlugin(container, {
-  initialTop: '50%',
-  initialLeft: '100%',
-});
+initPositionFixedPlugin(container, {});

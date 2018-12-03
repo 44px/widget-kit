@@ -33,11 +33,11 @@ class App extends Component<AppProps, AppState> {
 
     if (this.state.isOpened) {
       widget.send(setSize(`100%`, `100%`));
-      widget.send(setPosition('0', `0`));
+      widget.send(setPosition({ top: '0' }));
     } else {
       const labelRect = this.label.getBoundingClientRect();
       widget.send(setSize(`${labelRect.width}px`, `${labelRect.height}px`));
-      widget.send(setPosition('50%', `calc(100% - ${labelRect.width}px)`));
+      widget.send(setPosition({ top: `calc(50% - ${labelRect.height / 2}px)`, right: '0' }));
     }
   };
 
