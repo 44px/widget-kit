@@ -45,10 +45,16 @@ class App extends Component<AppProps, AppState> {
       if (this.parentMQ && this.parentMQ.matches) {
         const width = 300;
         const height = 350;
-        widget.send(setSize({ width: `${width}px`, height: `${height}px` }));
+        widget.send(
+          setSize({
+            width: `${width}px`,
+            height: `${height}px`,
+            maxHeight: `calc(100% - ${2 * cornerMargin}px)`,
+          }),
+        );
         widget.send(setPosition({ right: `${cornerMargin}px`, bottom: `${cornerMargin}px` }));
       } else {
-        widget.send(setSize({ width: '100%', height: '100%' }));
+        widget.send(setSize({ width: '100%', height: '100%', maxHeight: 'none' }));
         widget.send(setPosition({ right: '0', bottom: '0' }));
       }
     } else {

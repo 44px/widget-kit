@@ -48,6 +48,7 @@ html {
 .popup.is-opened {
   left: 50%;
   right: auto;
+  max-width: 90%;
   width: 500px;
   box-shadow: 0 2px 4px #ccc;
   transform: translate(-50%, -50%);
