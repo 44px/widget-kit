@@ -5,8 +5,10 @@ const container = createContainer(window, {
 });
 
 initSizePlugin(container, {
-  initialWidth: '0',
-  initialHeight: '0',
+  initialSize: {
+    width: '0',
+    height: '0',
+  },
 });
 
 initPositionFixedPlugin(container, {});

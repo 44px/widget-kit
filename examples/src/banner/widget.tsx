@@ -23,7 +23,12 @@ class App extends Component<Props> {
   onSizeUpdate = () => {
     if (this.container && this.props.widget) {
       const rect = this.container.getBoundingClientRect();
-      this.props.widget.send(setSize(`${rect.width}px`, `${rect.height}px`));
+      this.props.widget.send(
+        setSize({
+          width: `${rect.width}px`,
+          height: `${rect.height}px`,
+        }),
+      );
     }
   };
 

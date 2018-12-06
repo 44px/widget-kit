@@ -45,15 +45,15 @@ class App extends Component<AppProps, AppState> {
       if (this.parentMQ && this.parentMQ.matches) {
         const width = 300;
         const height = 350;
-        widget.send(setSize(`${width}px`, `${height}px`));
+        widget.send(setSize({ width: `${width}px`, height: `${height}px` }));
         widget.send(setPosition({ right: `${cornerMargin}px`, bottom: `${cornerMargin}px` }));
       } else {
-        widget.send(setSize('100%', '100%'));
+        widget.send(setSize({ width: '100%', height: '100%' }));
         widget.send(setPosition({ right: '0', bottom: '0' }));
       }
     } else {
       const labelRect = this.label.getBoundingClientRect();
-      widget.send(setSize(`${labelRect.width}px`, `${labelRect.height}px`));
+      widget.send(setSize({ width: `${labelRect.width}px`, height: `${labelRect.height}px` }));
       widget.send(setPosition({ right: `${cornerMargin}px`, bottom: `${cornerMargin}px` }));
     }
   };

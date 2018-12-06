@@ -5,6 +5,8 @@ const container = createContainer(window, {
 });
 
 initSizePlugin(container, {
-  initialWidth: '100%',
-  initialHeight: '0px',
+  initialSize: {
+    width: '100%',
+    height: '0',
+  },
 });
