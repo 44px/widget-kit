@@ -4,7 +4,7 @@ import { initPositionFixedPlugin, setPosition } from './position-fixed';
 describe('PositionFixed plugin', () => {
   it('keeps default values', () => {
     const [container, _] = getContainerAndWidget();
-    initPositionFixedPlugin(container, {});
+    initPositionFixedPlugin(container);
     expect(container.iframe.style.position).toBe('fixed');
     expect(container.iframe.style.top).toBe('');
     expect(container.iframe.style.left).toBe('');

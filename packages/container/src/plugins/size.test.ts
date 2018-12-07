@@ -4,7 +4,7 @@ import { initSizePlugin, setSize } from './size';
 describe('Size plugin', () => {
   it('keeps default values', () => {
     const [container, _] = getContainerAndWidget();
-    initSizePlugin(container, {});
+    initSizePlugin(container);
     expect(container.iframe.style.width).toBe('');
     expect(container.iframe.style.height).toBe('');
     expect(container.iframe.style.maxWidth).toBe('');

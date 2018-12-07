@@ -11,4 +11,4 @@ initSizePlugin(container, {
   },
 });
 
-initPositionFixedPlugin(container, {});
+initPositionFixedPlugin(container);

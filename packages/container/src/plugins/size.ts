@@ -16,7 +16,7 @@ interface Size {
   maxHeight?: string;
 }
 
-export function initSizePlugin(container: Container, config: Config): void {
+export function initSizePlugin(container: Container, config?: Config): void {
   const { iframe, handle } = container;
 
   function setSize(size: Size) {
@@ -26,7 +26,7 @@ export function initSizePlugin(container: Container, config: Config): void {
     size.maxHeight && (iframe.style.maxHeight = size.maxHeight);
   }
 
-  if (config.initialSize) {
+  if (config && config.initialSize) {
     setSize(config.initialSize);
   }
 
