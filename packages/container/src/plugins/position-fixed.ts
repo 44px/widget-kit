@@ -2,44 +2,40 @@ import { Request, createRequest } from '@widget-kit/rpc';
 import { Container } from '../container';
 
 const enum METHODS {
-  getPosition = 'plugins.positionFixed.getPosition',
   setPosition = 'plugins.positionFixed.setPosition',
 }
 
 export interface Config {
-  initialTop?: string;
-  initialLeft?: string;
+  initialPosition?: Position;
 }
 
-export function initPositionFixedPlugin(container: Container, config: Config): void {
+interface Position {
+  top?: string;
+  left?: string;
+  right?: string;
+  bottom?: string;
+}
+
+export function initPositionFixedPlugin(container: Container, config?: Config): void {
   const { iframe, handle } = container;
 
-  function setPosition(top?: string | null, left?: string | null) {
-    if (top) {
-      iframe.style.top = top;
-    }
-
-    if (left) {
-      iframe.style.left = left;
-    }
+  function setPosition(position: Position) {
+    position.top && (iframe.style.top = position.top);
+    position.left && (iframe.style.left = position.left);
+    position.right && (iframe.style.right = position.right);
+    position.bottom && (iframe.style.bottom = position.bottom);
   }
 
-  setPosition(config.initialTop, config.initialLeft);
+  iframe.style.position = 'fixed';
+  if (config && config.initialPosition) {
+    setPosition(config.initialPosition);
+  }
 
-  handle(METHODS.getPosition, (produceResponse) => {
-    const { top, left } = iframe.getBoundingClientRect();
-    produceResponse({ top, left });
-  });
-
-  handle(METHODS.setPosition, (_, top: string | null, left: string | null) => {
-    setPosition(top, left);
+  handle(METHODS.setPosition, (_, position: Position) => {
+    setPosition(position);
   });
 }
 
-export function getPosition(): Request {
-  return createRequest(METHODS.getPosition);
-}
-
-export function setPosition(top: string | null, left: string | null): Request {
-  return createRequest(METHODS.setPosition, top, left);
+export function setPosition(position: Position): Request {
+  return createRequest(METHODS.setPosition, position);
 }
