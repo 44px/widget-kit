@@ -1,5 +1,5 @@
 import { getContainerAndWidget } from './test-utils';
-import { initSizePlugin, getSize, setSize } from './size';
+import { initSizePlugin, setSize } from './size';
 
 describe('Size plugin', () => {
   it('keeps default values', () => {
@@ -25,25 +25,6 @@ describe('Size plugin', () => {
     expect(container.iframe.style.height).toBe('200px');
     expect(container.iframe.style.maxWidth).toBe('101px');
     expect(container.iframe.style.maxHeight).toBe('201px');
-  });
-
-  it('handles getSize request', (done) => {
-    const [container, widget] = getContainerAndWidget();
-    initSizePlugin(container, {
-      initialSize: {
-        width: '100px',
-        height: '200px',
-        maxWidth: '101px',
-        maxHeight: '201px',
-      },
-    });
-    widget.send(getSize(), (response) => {
-      // JSDOM implementation of getBoundingClientRect returns zeros for all values
-      // So check here just shape of response but not values
-      expect(response.payload.width).toBeDefined();
-      expect(response.payload.height).toBeDefined();
-      done();
-    });
   });
 
   it('handles setSize request', (done) => {

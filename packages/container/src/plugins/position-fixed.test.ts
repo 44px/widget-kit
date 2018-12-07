@@ -1,5 +1,5 @@
 import { getContainerAndWidget } from './test-utils';
-import { initPositionFixedPlugin, getPosition, setPosition } from './position-fixed';
+import { initPositionFixedPlugin, setPosition } from './position-fixed';
 
 describe('PositionFixed plugin', () => {
   it('keeps default values', () => {
@@ -27,27 +27,6 @@ describe('PositionFixed plugin', () => {
     expect(container.iframe.style.left).toBe('20px');
     expect(container.iframe.style.right).toBe('30px');
     expect(container.iframe.style.bottom).toBe('40px');
-  });
-
-  it('handles getPosition request', (done) => {
-    const [container, widget] = getContainerAndWidget();
-    initPositionFixedPlugin(container, {
-      initialPosition: {
-        top: '10px',
-        left: '20px',
-        right: '30px',
-        bottom: '40px',
-      },
-    });
-    widget.send(getPosition(), (response) => {
-      // JSDOM implementation of getBoundingClientRect returns zeros for all values
-      // So check here just shape of response but not values
-      expect(response.payload.top).toBeDefined();
-      expect(response.payload.left).toBeDefined();
-      expect(response.payload.right).toBeDefined();
-      expect(response.payload.bottom).toBeDefined();
-      done();
-    });
   });
 
   it('handles setPosition request', (done) => {

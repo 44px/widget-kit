@@ -4,7 +4,7 @@ module.exports = {
   },
   testEnvironment: 'jsdom',
   testURL: 'https://test.com',
-  testRegex: 'test\\.(ts|tsx|js)$',
+  testRegex: 'test\\.(ts|tsx)$',
   testPathIgnorePatterns: ['/node_modules/', '/dist/'],
   moduleFileExtensions: ['ts', 'tsx', 'js'],
   coveragePathIgnorePatterns: ['/node_modules/', '/test/'],

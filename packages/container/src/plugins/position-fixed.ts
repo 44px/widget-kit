@@ -2,7 +2,6 @@ import { Request, createRequest } from '@widget-kit/rpc';
 import { Container } from '../container';
 
 const enum METHODS {
-  getPosition = 'plugins.positionFixed.getPosition',
   setPosition = 'plugins.positionFixed.setPosition',
 }
 
@@ -32,18 +31,9 @@ export function initPositionFixedPlugin(container: Container, config: Config): v
     setPosition(config.initialPosition);
   }
 
-  handle(METHODS.getPosition, (produceResponse) => {
-    const { top, left, right, bottom } = iframe.getBoundingClientRect();
-    produceResponse({ top, left, right, bottom });
-  });
-
   handle(METHODS.setPosition, (_, position: Position) => {
     setPosition(position);
   });
-}
-
-export function getPosition(): Request {
-  return createRequest(METHODS.getPosition);
 }
 
 export function setPosition(position: Position): Request {
