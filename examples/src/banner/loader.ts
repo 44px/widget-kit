@@ -1,7 +1,7 @@
 import { createContainer, initSizePlugin } from '@widget-kit/container';
 
 const container = createContainer(window, {
-  url: 'http://localhost:8080/widget.html',
+  url: 'http://localhost:8080/banner/widget.html',
 });
 
 initSizePlugin(container, {

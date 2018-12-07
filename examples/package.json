@@ -8,12 +8,8 @@
     "fmt": "prettier --write 'src/**/*.{ts,tsx,json,css,html}'",
     "fmt-check": "prettier --list-different 'src/**/*.{ts,tsx,json,css,html}'",
     "lint": "tslint --project tsconfig.json -t codeFrame src/**/*.ts",
-    "start:banner": "webpack-dev-server --env.mode=development --env.example=banner",
-    "start:popup": "webpack-dev-server --env.mode=development --env.example=popup",
-    "start:chat": "webpack-dev-server --env.mode=development --env.example=chat",
-    "build:banner": "webpack --env.mode=production --env.example=banner",
-    "build:popup": "webpack --env.mode=production --env.example=popup",
-    "build:chat": "webpack --env.mode=production --env.example=chat"
+    "start": "webpack-dev-server --mode=development",
+    "build": "webpack --mode=production"
   },
   "dependencies": {
     "@widget-kit/container": "^1.0.0",

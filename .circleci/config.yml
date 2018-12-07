@@ -28,5 +28,9 @@ jobs:
           command: npm run lint -s
 
       - run:
+          name: Build packages and examples
+          command: npm run build
+
+      - run:
           name: Run tests
-          command: npm run build && npm test
+          command: npm test
