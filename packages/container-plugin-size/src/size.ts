@@ -1,5 +1,4 @@
-import { Request, createRequest } from '@widget-kit/rpc';
-import { Container } from '../container';
+import { Container, Request, createRequest } from '@widget-kit/container';
 
 const enum METHODS {
   setSize = 'plugins.size.setSize',
