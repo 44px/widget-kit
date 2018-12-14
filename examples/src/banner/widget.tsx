@@ -39,7 +39,7 @@ class App extends Component<Props> {
 
   render() {
     const rows = [];
-    for (let i = 0; i < this.state.clicks + 1; i++) {
+    for (let i = 0; i < this.state.clicks + 1; i += 1) {
       rows.push(<div>(click to add row)</div>);
     }
 
