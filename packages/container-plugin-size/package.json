@@ -1,0 +1,33 @@
+{
+  "name": "@widget-kit/container-plugin-size",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Alexander Shepelin <Brightcor@gmail.com> (https://github.com/44px)",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "fmt": "prettier --write 'src/**/*.{ts,json}'",
+    "fmt-check": "prettier --list-different 'src/**/*.{ts,json}'",
+    "lint": "tslint --project tsconfig.json -t codeFrame src/**/*.ts",
+    "test": "jest",
+    "prebuild": "rimraf dist",
+    "build": "tsc -d && rollup -c rollup.config.js",
+    "postbuild": "rimraf dist/lib"
+  },
+  "dependencies": {
+    "@widget-kit/container": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/jsdom": "^12.2.0",
+    "jsdom": "^13.0.0"
+  },
+  "keywords": []
+}

@@ -1,5 +1,7 @@
 import { Component, h, render } from 'preact';
-import { initWidget, setPosition, setSize, Widget } from '@widget-kit/container';
+import { initWidget, Widget } from '@widget-kit/container';
+import { setPosition } from '@widget-kit/container-plugin-position-fixed';
+import { setSize } from '@widget-kit/container-plugin-size';
 import './widget.css';
 
 interface AppProps {

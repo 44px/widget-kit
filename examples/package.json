@@ -13,6 +13,8 @@
   },
   "dependencies": {
     "@widget-kit/container": "^1.0.0",
+    "@widget-kit/container-plugin-position-fixed": "^1.0.0",
+    "@widget-kit/container-plugin-size": "^1.0.0",
     "@widget-kit/rpc": "^1.0.0",
     "preact": "^8.3.1"
   },

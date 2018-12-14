@@ -2,6 +2,8 @@
   "files": [],
   "references": [
     { "path": "container" },
+    { "path": "container-plugin-position-fixed" },
+    { "path": "container-plugin-size" },
     { "path": "rpc" }
   ]
 }

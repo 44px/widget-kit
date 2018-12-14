@@ -1,5 +1,6 @@
 import { Component, h, render } from 'preact';
-import { initWidget, setSize, Widget } from '@widget-kit/container';
+import { initWidget, Widget } from '@widget-kit/container';
+import { setSize } from '@widget-kit/container-plugin-size';
 import './widget.css';
 
 interface Props {

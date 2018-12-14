@@ -1,5 +1,4 @@
-import { Container, createContainer } from '../container';
-import { initWidget, Widget } from '../widget';
+import { Container, Widget, createContainer, initWidget } from '@widget-kit/container';
 import { JSDOM } from 'jsdom';
 
 export function getContainerAndWidget(): [Container, Widget] {
