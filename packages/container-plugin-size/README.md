@@ -14,8 +14,17 @@ $ npm install --save @widget-kit/container-plugin-size
 // TODO: usage example
 ```
 
-#### API Reference
+### API Reference
 
-```js
-// TODO: API Reference
-```
+#### `initSizePlugin(container, [config])`
+
+TODO: description
+
+- `container`:
+- `config`:
+
+#### `setSize(size)`
+
+TODO: description
+
+- `size`:

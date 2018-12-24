@@ -14,8 +14,18 @@ $ npm install --save @widget-kit/container
 // TODO: usage example
 ```
 
-#### API Reference
+### API Reference
 
-```js
-// TODO: API Reference
-```
+#### `createContainer(window, config)`
+
+TODO: description
+
+- `window`:
+- `config`:
+
+#### `initWidget(window, [containerOrigin])`
+
+TODO: description
+
+- `window`:
+- `containerOrigin`:

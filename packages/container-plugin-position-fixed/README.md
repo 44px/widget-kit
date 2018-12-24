@@ -14,8 +14,17 @@ $ npm install --save @widget-kit/container-plugin-position-fixed
 // TODO: usage example
 ```
 
-#### API Reference
+### API Reference
 
-```js
-// TODO: API Reference
-```
+#### `initPositionFixedPlugin(container, [config])`
+
+TODO: description
+
+- `container`:
+- `config`:
+
+#### `setPosition(position)`
+
+TODO: description
+
+- `position`:
