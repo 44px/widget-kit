@@ -6,25 +6,54 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = (env, argv) => {
+  const examples = argv.example ? [argv.example] : getSubDirectories('./src');
   const isProductionBuild = argv.mode === 'production';
   const template = './src/template.html';
 
-  return getSubDirectories('./src').map((example) => {
+  return examples.reduce((configs, example) => {
+    // Using multiple entry points disable tree-shaking
+    // So we should produce separate config for loader and widget
+    // see https://github.com/webpack/webpack/issues/4453
     const distPath = path.resolve(__dirname, 'dist', example);
-
-    return {
-      name: example,
+    const commonSettings = {
       mode: argv.mode,
-      entry: {
-        loader: `./src/${example}/loader.ts`,
-        widget: `./src/${example}/widget.tsx`,
-      },
+      devtool: 'source-map',
       output: {
         path: distPath,
         filename: '[name].js',
       },
       resolve: {
         extensions: ['.ts', '.tsx', '.js'],
+      },
+      stats: {
+        assets: true,
+        children: false,
+        chunks: false,
+        modules: false,
+      },
+    };
+
+    const loader = {
+      ...commonSettings,
+      name: `${example}-loader`,
+      entry: {
+        loader: `./src/${example}/loader.ts`,
+      },
+      module: {
+        rules: [{ test: /\.tsx?$/, use: ['ts-loader'] }],
+      },
+      plugins: [
+        isProductionBuild ? new CleanWebpackPlugin([distPath]) : null,
+        isProductionBuild ? new CompressionPlugin({ include: /\.js$/ }) : null,
+        new HtmlWebpackPlugin({ template }),
+      ].filter(Boolean),
+    };
+
+    const widget = {
+      ...commonSettings,
+      name: `${example}-widget`,
+      entry: {
+        widget: `./src/${example}/widget.tsx`,
       },
       module: {
         rules: [
@@ -39,26 +68,14 @@ module.exports = (env, argv) => {
         ],
       },
       plugins: [
-        isProductionBuild ? new CleanWebpackPlugin([distPath]) : null,
         isProductionBuild ? new MiniCssExtractPlugin() : null,
-        isProductionBuild ? new CompressionPlugin() : null,
-        // Host page:
-        new HtmlWebpackPlugin({ chunks: ['loader'], template }),
-        // Widget page:
-        new HtmlWebpackPlugin({
-          filename: 'widget.html',
-          chunks: ['widget'],
-          template,
-        }),
+        isProductionBuild ? new CompressionPlugin({ include: /\.js$/ }) : null,
+        new HtmlWebpackPlugin({ filename: 'widget.html', template }),
       ].filter(Boolean),
-      stats: {
-        assets: true,
-        children: false,
-        chunks: false,
-        modules: false,
-      },
     };
-  });
+
+    return [...configs, loader, widget];
+  }, []);
 };
 
 function getSubDirectories(dir) {
