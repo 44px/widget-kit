@@ -2,13 +2,13 @@
 
 Establishes connection between two windows allowing both to send and handle requests.
 
-### Install
+## Install
 
 ```bash
 $ npm install --save @widget-kit/rpc
 ```
 
-### Usage
+## Usage
 
 ```js
 // Main window:
@@ -30,31 +30,31 @@ widgetConnection.send(pingRequest, (response) => {
 });
 ```
 
-### API Reference
+## API Reference
 
-#### `createConnection(currentWindow, targetWindow, [targetOrigin])`
+### `createConnection(currentWindow, targetWindow, [targetOrigin])`
 
 Returns `Connection` object with `send` and `handle` methods. 
 
-- `currentWindow`: Window
-- `targetWindow`: Window
-- `targetOrigin`: if specified it will be used to restrict all sent and also check all incoming requests.
+- `currentWindow`: a reference to window where `createConnection` is called 
+- `targetWindow`: a reference to remote window
+- `targetOrigin`: an origin that `targetWindow`'s origin must match. This check performed for both outgoing and incoming requests
 
-#### `send(request, [onResponse])`
+### `send(request, [onResponse])`
 
 Sends prepared request
-- `request`: a plain object containing request method, arguments list and set of service fields. Use `createRequest` helper to create proper request.  
-- `onResponse`: response handler. Should accept `Response` object with `payload` and optional `error` fields
+- `request`: a plain object containing request method, arguments list and set of service fields. Use `createRequest` helper to create proper request 
+- `onResponse`: response handler. Accepts `Response` object with `payload` and optional `error` fields
 
 
-#### `handle(method, handler)`
+### `handle(method, handler)`
 
 Registers request handler for a given method.
 
-- `method`: string
-- `handler`: HandlerFn
+- `method`: an unique method identifier. It's recommended to have prefix with your app name for custom methods (like `myAwesomeApp.analytics.sendEvent`)
+- `handler`: TODO: HandlerFn
 
-#### `createRequest(method, ...args)`
+### `createRequest(method, ...args)`
 
 TODO: description
 
@@ -62,5 +62,5 @@ TODO: description
 - `args`: any
 
 ```js
-const sum = (a, b) => createRequest('sum', a, b);
+const sum = (a, b) => createRequest('myapp.sum', a, b);
 ```

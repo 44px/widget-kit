@@ -1,10 +1,10 @@
 # Examples
 
-Some real-world widget examples where widget-kit utilities should serve as a good foundation.
+Some real-world examples where widget-kit utilities should serve as a good foundation.
 
 ## Banner
 
-A widget that is located inside page content, adapts to parent `div` width and controls iframe height (like Embedded Tweets, Share Buttons, Facebook Page).
+A widget that is located inside page content, adapts to parent's width and controls iframe height (like Embedded Tweets, Share Buttons, Facebook Page).
 
 ## Popup
 

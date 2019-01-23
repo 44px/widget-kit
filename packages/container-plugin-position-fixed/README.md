@@ -2,13 +2,13 @@
 
 Control iframe position from widget.
 
-### Install
+## Install
 
 ```bash
 $ npm install --save @widget-kit/container-plugin-position-fixed
 ```
 
-### Usage
+## Usage
 
 ```js
 // Main window ("loader" script):
@@ -27,16 +27,16 @@ const request = setPosition({
 widget.send(request);
 ```
 
-### API Reference
+## API Reference
 
-#### `initPositionFixedPlugin(container, [config])`
+### `initPositionFixedPlugin(container, [config])`
 
 Registers handler for `setPosition` requests, sets `position: fixed` for iframe and allows to set initial position.
 
 - `container`: a `Container` instance returned by `createContainer`
 - `config`: allows to set initial position properties (top, left, right, bottom). All properties accept string values (e.g '200px' or '100%').
 
-#### `setPosition(position)`
+### `setPosition(position)`
 
 Creates request with a new position.
 

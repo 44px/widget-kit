@@ -2,13 +2,13 @@
 
 Control iframe size from widget.
 
-### Install
+## Install
 
 ```bash
 $ npm install --save @widget-kit/container-plugin-size
 ```
 
-### Usage
+## Usage
 
 ```js
 // Main window ("loader" script):
@@ -27,16 +27,16 @@ const request = setSize({
 widget.send(request);
 ```
 
-### API Reference
+## API Reference
 
-#### `initSizePlugin(container, [config])`
+### `initSizePlugin(container, [config])`
 
 Registers handler for `setSize` requests and allows to set initial size.
 
 - `container`: a `Container` instance returned by `createContainer`
 - `config`: allows to set initial size properties (width, height, maxWidth and maxHeight). All properties accept string values (e.g '200px' or '100%').
 
-#### `setSize(size)`
+### `setSize(size)`
 
 Creates request with a new size.
 

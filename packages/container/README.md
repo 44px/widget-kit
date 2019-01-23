@@ -2,28 +2,28 @@
 
 TODO: description
 
-### Install
+## Install
 
 ```bash
 $ npm install --save @widget-kit/container
 ```
 
-### Usage
+## Usage
 
 ```js
 // TODO: usage example
 ```
 
-### API Reference
+## API Reference
 
-#### `createContainer(window, config)`
+### `createContainer(window, config)`
 
 TODO: description
 
 - `window`:
 - `config`:
 
-#### `initWidget(window, [containerOrigin])`
+### `initWidget(window, [containerOrigin])`
 
 TODO: description
 
