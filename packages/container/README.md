@@ -39,16 +39,15 @@ $ npm install --save @widget-kit/container
 
 ## API Reference
 
-### `createContainer(window, config)`
+### `createContainer(url, config)`
 
 Creates iframe element and loads url from config into it. Establishes connection between current window and iframe's window. Should be called from host page.
 
-- `window`:
+- `url`:
 - `config`:
 
-### `initWidget(window, [containerOrigin])`
+### `initWidget([containerOrigin])`
 
 Establishes connection between current (iframe) and parent window. Should be called in widget code.
 
-- `window`:
 - `containerOrigin`:

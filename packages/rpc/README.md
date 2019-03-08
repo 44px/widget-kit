@@ -13,7 +13,6 @@ $ npm install --save @widget-kit/rpc
 ```js
 // Main window:
 const hostConnection = createConnection(
-  window,
   iframe.contentWindow,
   'https://remote.example.com'
 );
@@ -23,7 +22,7 @@ hostConnection.handle('ping', (respond) => {
 });
 
 // Iframe (loaded from https://remote.example.com):
-const widgetConnection = createConnection(window, window.parent);
+const widgetConnection = createConnection(window.parent);
 const pingRequest = createRequest('ping');
 widgetConnection.send(pingRequest, (response) => {
   console.log(response.payload);  // prints 'pong'
@@ -36,7 +35,6 @@ widgetConnection.send(pingRequest, (response) => {
 
 Returns `Connection` object with `send` and `handle` methods. 
 
-- `currentWindow`: a reference to window where `createConnection` is called 
 - `targetWindow`: a reference to remote window
 - `targetOrigin`: an origin that `targetWindow`'s origin must match. This check performed for both outgoing and incoming requests
 
