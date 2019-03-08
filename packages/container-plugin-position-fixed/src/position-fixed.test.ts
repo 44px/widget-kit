@@ -1,9 +1,39 @@
-import { getContainerAndWidget } from './test-utils';
+import { Container, createContainer, Request, Widget } from '@widget-kit/container';
 import { initPositionFixedPlugin, setPosition } from './position-fixed';
 
 describe('PositionFixed plugin', () => {
+  let container: Container;
+  let widget: Widget;
+  const dispatchEvent = window.dispatchEvent;
+  beforeEach(() => {
+    container = createContainer('https://widget.example.com');
+
+    let sequenceId = 0;
+    widget = {
+      send(request: Request): void {
+        sequenceId += 1;
+        request.sequenceId = sequenceId;
+        window.postMessage(request, '*');
+      },
+      handle: jest.fn(),
+    };
+
+    // Since JSDOM has no support for event.origin and event.source add them manually
+    const widgetWindow = container.iframe.contentWindow as Window;
+    window.dispatchEvent = (event: Event): boolean => {
+      if (event.type === 'message') {
+        Object.defineProperty(event, 'source', {
+          value: widgetWindow,
+        });
+        Object.defineProperty(event, 'origin', {
+          value: widgetWindow.location.origin,
+        });
+      }
+      return dispatchEvent(event);
+    };
+  });
+
   it('keeps default values', () => {
-    const [container, _] = getContainerAndWidget();
     initPositionFixedPlugin(container);
     expect(container.iframe.style.position).toBe('fixed');
     expect(container.iframe.style.top).toBe('');
@@ -13,7 +43,6 @@ describe('PositionFixed plugin', () => {
   });
 
   it('sets initial values', () => {
-    const [container, _] = getContainerAndWidget();
     initPositionFixedPlugin(container, {
       initialPosition: {
         top: '10px',
@@ -30,7 +59,6 @@ describe('PositionFixed plugin', () => {
   });
 
   it('handles setPosition request', (done) => {
-    const [container, widget] = getContainerAndWidget();
     initPositionFixedPlugin(container, {
       initialPosition: {
         top: '10px',
@@ -57,7 +85,6 @@ describe('PositionFixed plugin', () => {
   });
 
   it('handles setPosition request: only top', (done) => {
-    const [container, widget] = getContainerAndWidget();
     initPositionFixedPlugin(container, {
       initialPosition: {
         top: '10px',

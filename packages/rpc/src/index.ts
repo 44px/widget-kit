@@ -1,3 +1,5 @@
+import { createConnection as internalCreateConnection } from './rpc';
+
 export {
   Request,
   Response,
@@ -5,6 +7,9 @@ export {
   ResponseHandlerFn,
   HandlerFn,
   Connection,
-  createConnection,
   createRequest,
 } from './rpc';
+
+export function createConnection(targetWindow: Window, targetOrigin: string = '*') {
+  return internalCreateConnection(window, targetWindow, targetOrigin);
+}

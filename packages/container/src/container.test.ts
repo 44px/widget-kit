@@ -3,9 +3,7 @@ import { createContainer } from './container';
 describe('createContainer', () => {
   it('should create iframe with a given url', () => {
     const URL = 'https://widget.example.com/';
-    const { iframe } = createContainer(window, {
-      url: URL,
-    });
+    const { iframe } = createContainer(URL);
 
     expect(iframe.src).toBe(URL);
     expect(iframe.parentElement).toBe(window.document.body);
@@ -16,8 +14,7 @@ describe('createContainer', () => {
     const parent = document.createElement('div');
     document.body.appendChild(parent);
 
-    const { iframe } = createContainer(window, {
-      url: 'https://widget.example.com/',
+    const { iframe } = createContainer('https://widget.example.com/', {
       parentElement: parent,
     });
 

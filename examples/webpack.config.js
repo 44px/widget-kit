@@ -14,12 +14,11 @@ module.exports = (env, argv) => {
     // Using multiple entry points disable tree-shaking
     // So we should produce separate config for loader and widget
     // see https://github.com/webpack/webpack/issues/4453
-    const distPath = path.resolve(__dirname, 'dist', example);
     const commonSettings = {
       mode: argv.mode,
       devtool: 'source-map',
       output: {
-        path: distPath,
+        path: path.resolve(__dirname, 'dist', example),
         filename: '[name].js',
       },
       resolve: {
@@ -43,7 +42,7 @@ module.exports = (env, argv) => {
         rules: [{ test: /\.tsx?$/, use: ['ts-loader'] }],
       },
       plugins: [
-        isProductionBuild ? new CleanWebpackPlugin([distPath]) : null,
+        isProductionBuild ? new CleanWebpackPlugin() : null,
         isProductionBuild ? new CompressionPlugin({ include: /\.js$/ }) : null,
         new HtmlWebpackPlugin({ template }),
       ].filter(Boolean),

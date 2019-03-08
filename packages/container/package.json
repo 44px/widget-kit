@@ -26,9 +26,6 @@
   "dependencies": {
     "@widget-kit/rpc": "^1.0.0"
   },
-  "devDependencies": {
-    "@types/jsdom": "^12.2.0",
-    "jsdom": "^13.0.0"
-  },
+  "devDependencies": {},
   "keywords": []
 }
