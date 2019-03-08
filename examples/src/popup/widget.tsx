@@ -112,5 +112,5 @@ class Popup extends Component<PopupProps> {
 }
 
 // Start widget
-const widget = window.parent !== window ? initWidget(window) : undefined;
+const widget = window.parent !== window ? initWidget() : undefined;
 render(<App widget={widget} />, document.body);
