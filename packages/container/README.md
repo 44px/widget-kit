@@ -34,7 +34,20 @@ $ npm install --save @widget-kit/container
 ## Usage
 
 ```js
-// TODO: usage example
+// Main window:
+const container = createContainer('https://remote.example.com/widget.html');
+
+container.handle('ping', (respond) => {
+  respond('pong');
+});
+
+// Iframe (loaded from https://remote.example.com):
+const widget = initWidget();
+const pingRequest = createRequest('ping');
+
+widget.send(pingRequest, (response) => {
+  console.log(response.payload);
+});
 ```
 
 ## API Reference
@@ -43,11 +56,12 @@ $ npm install --save @widget-kit/container
 
 Creates iframe element and loads url from config into it. Establishes connection between current window and iframe's window. Should be called from host page.
 
-- `url`:
+- `url`: an url of page with widget that would be loaded into iframe
 - `config`:
+  - `parentElement`: allows to define element that iframe would be attached to. Default value is `document.body`.
 
 ### `initWidget([containerOrigin])`
 
 Establishes connection between current (iframe) and parent window. Should be called in widget code.
 
-- `containerOrigin`:
+- `containerOrigin`: origin of a page your widget can talk to. Default value is `'*'` (no restrictions). 
