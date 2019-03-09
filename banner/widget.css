@@ -1,0 +1,43 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+.banner {
+  display: inline-block;
+  min-width: 200px;
+  max-width: 250px;
+  padding: 16px 12px;
+  border-radius: 4px;
+  background: #faddd4;
+}
+
+.banner__title {
+  font-size: 20px;
+  line-height: 1.2;
+  color: #d86838;
+}
+
+.banner__description {
+  line-height: 1.2;
+  color: #444;
+}
+
+.banner__cta {
+  font-size: 14px;
+  line-height: 2;
+  color: #444;
+}
+
+
+/*# sourceMappingURL=widget.css.map*/

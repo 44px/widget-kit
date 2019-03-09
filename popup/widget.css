@@ -1,0 +1,88 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+.label {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  display: inline-block;
+  padding: 12px 20px;
+  color: #edf5ff;
+  background: #5ca2ff;
+  border-radius: 4px 4px 0 0;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  transform: translate(50%, -50%) rotateZ(-90deg) translate(0, -50%);
+  transition: transform 0.25s ease;
+}
+
+.label.is-opened {
+  transform: translate(50%, -50%) rotateZ(-90deg) translate(0, 50%);
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 100%;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: none;
+  transition: left 0.25s ease;
+  overflow: hidden;
+}
+
+.popup.is-opened {
+  left: 50%;
+  right: auto;
+  max-width: 90%;
+  width: 500px;
+  box-shadow: 0 2px 4px #ccc;
+  transform: translate(-50%, -50%);
+}
+
+.popup__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 12px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.popup__content {
+  margin: 96px 0;
+  font-size: 64px;
+  text-align: center;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.backdrop.is-opened {
+  opacity: 0.05;
+}
+
+
+/*# sourceMappingURL=widget.css.map*/
