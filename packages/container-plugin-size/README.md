@@ -33,11 +33,11 @@ widget.send(request);
 
 Registers handler for `setSize` requests and allows to set initial size.
 
-- `container`: a `Container` instance returned by `createContainer`
-- `config`: allows to set initial size properties (width, height, maxWidth and maxHeight). All properties accept string values (e.g '200px' or '100%').
+- `container`: a `Container` instance returned by `createContainer`.
+- `config`: allows to set initial size properties (width, height, maxWidth and maxHeight). All properties accept string values (e.g. '200px' or '100%').
 
 ### `setSize(size)`
 
 Creates request with a new size.
 
-- `size`: properties that should be changed (width, height, maxWidth, maxHeight)
+- `size`: properties that would be changed (width, height, maxWidth, maxHeight).

@@ -31,26 +31,26 @@ widgetConnection.send(pingRequest, (response) => {
 
 ## API Reference
 
-### `createConnection(currentWindow, targetWindow, [targetOrigin])`
+### `createConnection(targetWindow, [targetOrigin])`
 
 Returns `Connection` object with `send` and `handle` methods. 
 
-- `targetWindow`: a reference to remote window
-- `targetOrigin`: an origin that `targetWindow`'s origin must match. This check performed for both outgoing and incoming requests
+- `targetWindow`: a reference to remote window.
+- `targetOrigin`: allows to restrict windows communication by origin. If `targetWindow` origin does not match no request would be sent nor accepted from it.
 
 ### `send(request, [onResponse])`
 
 Sends prepared request.
 
-- `request`: a plain object containing request method, arguments list and set of service fields. Use `createRequest` helper to create proper request object
-- `onResponse`: response handler. Accepts `Response` object with `payload` and optional `error` fields
+- `request`: a plain object containing request method, arguments list and set of service fields. Use `createRequest` helper to create proper request object.
+- `onResponse`: response handler. Accepts `Response` object with `payload` and optional `error` fields.
 
 ### `handle(method, handler)`
 
 Registers request handler for a given method.
 
-- `method`: an unique method identifier. It's recommended to have prefix with your app name for custom methods (like `myAwesomeApp.analytics.sendEvent`)
-- `handler`: a handler function that accepts response callback and list of method arguments. You can call response callback at any time passing to it result or error.
+- `method`: an unique method identifier. It's recommended to have prefix with your app name for custom methods (like `myAwesomeApp.analytics.sendEvent`).
+- `handler`: a handler function that accepts response callback and method arguments. You can call response callback at any time passing to it result or error.
 
 Example:
 
@@ -66,10 +66,10 @@ connection.handle('myapp.divide', (respond, a, b) => {
 
 ### `createRequest(method, ...args)`
 
-Creates request object that could be sent later
+Creates request object that could be sent later.
 
-- `method`: a name of the called method
-- `args`: arguments that would be passed to method handler
+- `method`: a name of the called method.
+- `args`: arguments that would be passed to method handler.
 
 Example:
 

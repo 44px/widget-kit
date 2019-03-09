@@ -33,11 +33,11 @@ widget.send(request);
 
 Registers handler for `setPosition` requests, sets `position: fixed` for iframe and allows to set initial position.
 
-- `container`: a `Container` instance returned by `createContainer`
-- `config`: allows to set initial position properties (top, left, right, bottom). All properties accept string values (e.g '200px' or '100%').
+- `container`: a `Container` instance returned by `createContainer`.
+- `config`: allows to set initial position properties (top, left, right, bottom). All properties accept string values (e.g. '200px' or '100%').
 
 ### `setPosition(position)`
 
 Creates request with a new position.
 
-- `position`: properties that should be changed (top, left, right, bottom)
+- `position`: properties that would be changed (top, left, right, bottom).
