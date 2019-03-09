@@ -1,6 +1,6 @@
 {
   "name": "widget-kit-examples",
-  "version": "1.0.0-rc.0",
+  "version": "1.0.0",
   "private": true,
   "author": "Alexander Shepelin <Brightcor@gmail.com> (https://github.com/44px)",
   "license": "MIT",
@@ -15,10 +15,10 @@
     "publish-examples": "gh-pages -d dist"
   },
   "dependencies": {
-    "@widget-kit/container": "^1.0.0-rc.0",
-    "@widget-kit/container-plugin-position-fixed": "^1.0.0-rc.0",
-    "@widget-kit/container-plugin-size": "^1.0.0-rc.0",
-    "@widget-kit/rpc": "^1.0.0-rc.0",
+    "@widget-kit/container": "^1.0.0",
+    "@widget-kit/container-plugin-position-fixed": "^1.0.0",
+    "@widget-kit/container-plugin-size": "^1.0.0",
+    "@widget-kit/rpc": "^1.0.0",
     "preact": "^8.3.1"
   },
   "devDependencies": {

@@ -1,6 +1,6 @@
 {
   "name": "@widget-kit/container",
-  "version": "1.0.0-rc.0",
+  "version": "1.0.0",
   "description": "Isolated environment for embeddable widget via iframe",
   "keywords": [
     "widget",
@@ -36,6 +36,6 @@
     "postbuild": "rimraf dist/lib"
   },
   "dependencies": {
-    "@widget-kit/rpc": "^1.0.0-rc.0"
+    "@widget-kit/rpc": "^1.0.0"
   }
 }

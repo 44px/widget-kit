@@ -1,6 +1,6 @@
 {
   "name": "@widget-kit/rpc",
-  "version": "1.0.0-rc.0",
+  "version": "1.0.0",
   "description": "P2P RPC via postMessage",
   "keywords": [
     "cross-domain",
