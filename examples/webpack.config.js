@@ -19,6 +19,9 @@ module.exports = (env, argv) => {
       devtool: 'source-map',
       output: {
         path: path.resolve(__dirname, 'dist', example),
+        publicPath: isProductionBuild
+          ? `https://44px.github.io/widget-kit/${example}`
+          : `http://localhost:8080/${example}`,
         filename: '[name].js',
       },
       resolve: {

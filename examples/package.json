@@ -9,7 +9,8 @@
     "fmt-check": "prettier --list-different 'src/**/*.{ts,tsx,json,css,html}'",
     "lint": "tslint --project tsconfig.json -t codeFrame src/**/*.{ts,tsx}",
     "start": "webpack-dev-server --mode=development",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
+    "postbuild": "cp index.html dist/index.html"
   },
   "dependencies": {
     "@widget-kit/container": "^1.0.0",
