@@ -21,7 +21,7 @@ class App extends Component<AppProps, AppState> {
 
   componentDidMount(): void {
     this.parentMQ = window.parent.matchMedia('screen and (min-width: 600px)');
-    this.parentMQ.addEventListener('change', this.onSizeChange);
+    this.parentMQ.addListener(this.onSizeChange);
     this.onSizeChange();
   }
 
@@ -31,7 +31,7 @@ class App extends Component<AppProps, AppState> {
 
   componentWillUnmount(): void {
     if (this.parentMQ) {
-      this.parentMQ.removeEventListener('change', this.onSizeChange);
+      this.parentMQ.removeListener(this.onSizeChange);
     }
   }
 

@@ -24,6 +24,7 @@ html {
   white-space: nowrap;
   cursor: pointer;
   user-select: none;
+  overflow: hidden;
 }
 
 .label:hover {
