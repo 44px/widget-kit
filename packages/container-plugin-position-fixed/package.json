@@ -1,6 +1,6 @@
 {
   "name": "@widget-kit/container-plugin-position-fixed",
-  "version": "1.0.0",
+  "version": "1.0.0-rc.0",
   "description": "Control iframe position from widget within iframe",
   "keywords": [
     "widget",
@@ -39,6 +39,6 @@
     "postbuild": "rimraf dist/lib"
   },
   "dependencies": {
-    "@widget-kit/container": "^1.0.0"
+    "@widget-kit/container": "^1.0.0-rc.0"
   }
 }
