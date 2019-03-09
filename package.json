@@ -8,7 +8,9 @@
     "fmt-check": "lerna run fmt-check",
     "lint": "lerna run lint",
     "test": "jest",
-    "build": "lerna run build"
+    "build": "lerna run build",
+    "prepublish": "lerna run build",
+    "publish": "lerna publish"
   },
   "devDependencies": {
     "@types/jest": "^24.0.9",

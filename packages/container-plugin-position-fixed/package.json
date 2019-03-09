@@ -23,7 +23,8 @@
   "types": "dist/types/index.d.ts",
   "sideEffects": false,
   "files": [
-    "dist"
+    "dist",
+    "src/!(*.test.ts)"
   ],
   "publishConfig": {
     "access": "public"
@@ -39,6 +40,5 @@
   },
   "dependencies": {
     "@widget-kit/container": "^1.0.0"
-  },
-  "devDependencies": {}
+  }
 }
