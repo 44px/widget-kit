@@ -1,8 +1,22 @@
 {
   "name": "@widget-kit/container-plugin-size",
   "version": "1.0.0",
-  "description": "",
+  "description": "Control iframe size from widget within iframe",
+  "keywords": [
+    "widget",
+    "embed",
+    "postmessage",
+    "iframe",
+    "size",
+    "popup",
+    "chat",
+    "widget-kit"
+  ],
   "author": "Alexander Shepelin <Brightcor@gmail.com> (https://github.com/44px)",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/44px/widget-kit.git"
+  },
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -26,6 +40,5 @@
   "dependencies": {
     "@widget-kit/container": "^1.0.0"
   },
-  "devDependencies": {},
-  "keywords": []
+  "devDependencies": {}
 }

@@ -1,8 +1,21 @@
 {
   "name": "@widget-kit/rpc",
   "version": "1.0.0",
-  "description": "",
+  "description": "P2P RPC via postMessage",
+  "keywords": [
+    "cross-domain",
+    "cross domain",
+    "xdm",
+    "postmessage",
+    "iframe",
+    "rpc",
+    "widget-kit"
+  ],
   "author": "Alexander Shepelin <Brightcor@gmail.com> (https://github.com/44px)",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/44px/widget-kit.git"
+  },
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -26,6 +39,5 @@
   "devDependencies": {
     "@types/jsdom": "^12.2.0",
     "jsdom": "^13.0.0"
-  },
-  "keywords": []
+  }
 }
