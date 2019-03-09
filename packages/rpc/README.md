@@ -1,4 +1,4 @@
-# @widget-kit/rpc
+# @widget-kit/rpc [![npm](https://img.shields.io/npm/v/@widget-kit/rpc.svg)](https://www.npmjs.com/package/@widget-kit/rpc) [![gzip size](https://img.shields.io/bundlephobia/minzip/@widget-kit/rpc.svg?label=gzip%20size)](https://bundlephobia.com/result?p=@widget-kit/rpc)
 
 Establishes connection between two windows allowing both to send and handle requests.
 

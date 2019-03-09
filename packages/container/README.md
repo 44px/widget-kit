@@ -1,4 +1,4 @@
-# @widget-kit/container
+# @widget-kit/container [![npm](https://img.shields.io/npm/v/@widget-kit/container.svg)](https://www.npmjs.com/package/@widget-kit/container) [![gzip size](https://img.shields.io/bundlephobia/minzip/@widget-kit/container.svg?label=gzip%20size)](https://bundlephobia.com/result?p=@widget-kit/container)
 
 Provides own context for widget via iframe and allows communication between iframe and host page.
 

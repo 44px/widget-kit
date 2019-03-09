@@ -1,4 +1,4 @@
-# @widget-kit/container-plugin-size
+# @widget-kit/container-plugin-size [![npm](https://img.shields.io/npm/v/@widget-kit/container-plugin-size.svg)](https://www.npmjs.com/package/@widget-kit/container-plugin-size) [![gzip size](https://img.shields.io/bundlephobia/minzip/@widget-kit/container-plugin-size.svg?label=gzip%20size)](https://bundlephobia.com/result?p=@widget-kit/container-plugin-size)
 
 Control iframe size from widget.
 

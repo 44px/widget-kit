@@ -1,4 +1,4 @@
-# @widget-kit/container-plugin-position-fixed
+# @widget-kit/container-plugin-position-fixed [![npm](https://img.shields.io/npm/v/@widget-kit/container-plugin-position-fixed.svg)](https://www.npmjs.com/package/@widget-kit/container-plugin-position-fixed) [![gzip size](https://img.shields.io/bundlephobia/minzip/@widget-kit/container-plugin-position-fixed.svg?label=gzip%20size)](https://bundlephobia.com/result?p=@widget-kit/container-plugin-position-fixed)
 
 Control iframe position from widget.
 
