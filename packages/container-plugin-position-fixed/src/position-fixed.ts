@@ -15,7 +15,7 @@ interface Position {
   bottom?: string;
 }
 
-export function initPositionFixedPlugin(container: Container, config?: Config): void {
+export function initPositionFixedPlugin(container: Container, config: Config = {}): void {
   const { iframe, handle } = container;
 
   function setPosition(position: Position) {
@@ -26,7 +26,7 @@ export function initPositionFixedPlugin(container: Container, config?: Config): 
   }
 
   iframe.style.position = 'fixed';
-  if (config && config.initialPosition) {
+  if (config.initialPosition) {
     setPosition(config.initialPosition);
   }
 
