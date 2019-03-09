@@ -10,9 +10,9 @@ A set of utilities for embeddable widgets — apps which are installed on a wide
 
 If you are building widget from scratch you can start with `container` and use plugins for common tasks:
 
-`@widget-kit/container-plugin-size` — change iframe size from widget.
+`@widget-kit/container-plugin-size` — change iframe size from widget ([example](https://44px.github.io/widget-kit/banner/)).
 
-`@widget-kit/container-plugin-position-fixed` — control iframe position relative to viewport. Useful for widgets which "floats" on a page, like chats and popups.
+`@widget-kit/container-plugin-position-fixed` — control iframe position relative to viewport. Useful for widgets which "floats" on a page, like [chats](https://44px.github.io/widget-kit/chat/) and [popups](https://44px.github.io/widget-kit/popup/).
 
 ## Development
 
