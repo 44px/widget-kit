@@ -9,7 +9,10 @@
     "fmt-check": "prettier --list-different 'src/**/*.{ts,tsx,json,css,html}'",
     "lint": "tslint --project tsconfig.json -t codeFrame src/**/*.{ts,tsx}",
     "start": "webpack-dev-server --mode=development",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
+    "postbuild": "cp index.html dist/index.html",
+    "prepublish-examples": "npm run build",
+    "publish-examples": "gh-pages -d dist"
   },
   "dependencies": {
     "@widget-kit/container": "^1.0.0",
@@ -22,6 +25,7 @@
     "clean-webpack-plugin": "^2.0.0",
     "compression-webpack-plugin": "^2.0.0",
     "css-loader": "^2.1.1",
+    "gh-pages": "^2.0.1",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.5.0",
     "style-loader": "^0.23.1",
